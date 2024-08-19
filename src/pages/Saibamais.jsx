@@ -1,9 +1,7 @@
-
 import logo from '../assets/mala/icone.jpg'; 
-import { Link } from 'react-router-dom';
 
 
-export function Home() {
+export function SaibaMais() {
   return (
     <>
       <nav>
@@ -14,7 +12,7 @@ export function Home() {
         <Link to="/comprar">Comprar</Link>
       </nav>
       <main className="main-content">
-        <h1>Secure<br />Trip</h1>
+        <h1>REFERÊNCIAS BIBLIOGRÁFICAS/ARTIGOS</h1>
       </main>
     </>
   );
