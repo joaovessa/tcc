@@ -205,4 +205,100 @@ nav a {
    }
 }
 
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  flex: 0 0 auto;
+  text-align: center;
+  padding: 2rem 0; /* Adiciona espaçamento vertical ao conteúdo */
+}
+
+.carousel img {
+  max-width: 60%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px; /* Bordas arredondadas para um efeito mais estético */
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .carousel img {
+    max-width: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel img {
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .carousel img {
+    max-width: 25%;
+  }
+}
+
+.carousel-item h3, 
+.carousel-item p {
+  text-align: center; /* Centraliza o texto para uma estética limpa */
+  margin: 1rem 0; /* Espaçamento padrão entre os elementos */
+  width: 90%; /* Define uma largura que se adapta bem a diferentes tamanhos de tela */
+  margin-left: auto; /* Centraliza horizontalmente */
+  margin-right: auto; /* Centraliza horizontalmente */
+}
+
+.carousel-item h3 {
+  font-size: 2.4rem; /* Tamanho do título ajustado */
+  margin-bottom: 2rem; /* Espaçamento maior abaixo do título */
+}
+
+.carousel-item p {
+  font-size: 1.8rem; /* Tamanho de texto legível */
+  margin-bottom: 3rem; /* Espaçamento maior abaixo do parágrafo */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .carousel-item h3 {
+    font-size: 2rem; /* Tamanho do título para dispositivos menores */
+  }
+
+  .carousel-item p {
+    font-size: 1.6rem; /* Tamanho do texto para dispositivos menores */
+  }
+}
+
+
 `
