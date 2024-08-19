@@ -72,7 +72,7 @@ nav {
 
 nav img {
    height: 50px;
-   margin-right: 2rem;
+   margin-right: 1rem;
 
    @media (max-width: 768px) {
       margin-bottom: 1rem;
@@ -121,7 +121,7 @@ nav a {
 
 /* Materiais e Peças Section */
 .materials-section {
-   background-image: url(${props => props.theme.fundo});
+   background-image: ${props => props.theme.fundo};
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;

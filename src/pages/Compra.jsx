@@ -25,20 +25,28 @@ const PageWrapper = styled.div`
 `;
 
 const NavBar = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 1rem 2rem;
-  background-color:  ${props => props.theme.barra};
+   width: 100%;
+   background-color: ${props => props.theme.barra};
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem 3rem;
+   position: relative;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 1rem;
   a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin: 0 1rem;
+     font-family: 'Kanit', sans-serif;
+   color: ${props => props.theme.white};
+   text-decoration: none;
+   font-size: 2rem;
+   font-weight: bold;
+   margin: 0 2rem;
 
-    &:hover {
-      text-decoration: underline;
+   @media (max-width: 768px) {
+      font-size: 1.6rem;
+      margin: 0.5rem 0;
     }
   }
 
