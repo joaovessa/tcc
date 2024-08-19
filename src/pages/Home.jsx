@@ -1,9 +1,15 @@
-
-import logo from '../assets/mala/icone.jpg'; 
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import logo from '../assets/mala/icone.jpg';
 
 export function Home() {
+  useEffect(() => {
+    document.body.classList.add('home-background');
+    return () => {
+      document.body.classList.remove('home-background');
+    };
+  }, []);
+
   return (
     <>
       <nav>

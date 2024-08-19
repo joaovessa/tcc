@@ -2,12 +2,25 @@ import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
 
+ .home-background {
+   font-size: 1.6rem;
+   background-image: ${props => props.theme.backgroundImage};
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-color: ${props => props.theme.Homebackground};
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   text-align: center;
+  }
+
 /* Global */
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   font-family: "Spirax", sans-serif;
+   font-family: "Suez One", sans-serif;
 }
 
 :root {
@@ -21,7 +34,7 @@ html, body {
 
 body {
    font-size: 1.6rem;
-   background-image: ${props => props.theme.backgroundImage};
+   background-image: ${props => props.theme.fundo};
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
@@ -57,6 +70,25 @@ nav a {
 }
 
 /* Conteúdo Principal */
+.main-content1 {
+   color: ${props => props.theme.textColor};
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 2rem;
+   
+}
+
+.main-content1 p {
+   font-size: 3rem;
+   margin-top: 1rem;
+   font-weight: normal;
+   letter-spacing: 0.15rem;
+   font-family: "Shanti", sans-serif;
+}
+
 .main-content {
    color: ${props => props.theme.textColor};
    flex: 1;
@@ -73,6 +105,7 @@ nav a {
    font-weight: bold;
    margin: 0;
    letter-spacing: 0.2rem;
+   font-family: "Spirax", sans-serif;
 }
 
 .main-content .subtitle {

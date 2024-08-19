@@ -11,11 +11,10 @@ export function SobreNos() {
         <Link to="/sobre-nos">Sobre nós</Link>
         <Link to="/comprar">Comprar</Link>
       </nav>
-      <main className="main-content">
-        <h1>Sobre Nós</h1>
+      <main className="main-content1">
+        <h1>INTEGRANTES</h1>
         <p>
-          A SecureTrip foi fundada com o objetivo de transformar a forma como as pessoas viajam, proporcionando segurança, conforto e inovação. Nossa missão é garantir que cada viagem seja uma experiência tranquila e segura, com a melhor tecnologia disponível.
-        </p>
+        Nós somos uma equipe de três estudantes do Campus UNASP-SP e estamos desenvolvendo a SecureTrip, uma mala inteligente equipada com travas de segurança por código e impressão digital, além de um sistema de rastreamento por GPS.        </p>
       </main>
     </>
   );
