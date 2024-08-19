@@ -284,27 +284,27 @@ nav a {
 
 .carousel-inner {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .carousel-item {
   min-width: 100%;
   flex: 0 0 auto;
   text-align: center;
-  padding: 2rem 0; /* Adiciona espaçamento vertical ao conteúdo */
+  padding: 1rem 0; /* Espaçamento vertical reduzido */
 
   @media (max-width: 768px) {
-      padding: 1.5rem 0;
+      padding: 0.5rem 0;
   }
 }
 
 .carousel img {
-  max-width: 60%;
+  max-width: 20%; /* Reduz significativamente o tamanho das imagens no desktop */
   height: auto;
   margin: 0 auto;
 
   @media (max-width: 768px) {
-      max-width: 80%;
+      max-width: 30%; /* Reduz ainda mais o tamanho das imagens no mobile */
   }
 }
 
@@ -315,14 +315,14 @@ nav a {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  font-size: 2rem;
-  padding: 1rem;
+  font-size: 1.6rem;
+  padding: 0.8rem;
   cursor: pointer;
   z-index: 1;
 
   @media (max-width: 768px) {
-      font-size: 1.6rem;
-      padding: 0.8rem;
+      font-size: 1.2rem;
+      padding: 0.6rem;
   }
 }
 
@@ -338,44 +338,53 @@ nav a {
 .carousel-item h3, 
 .carousel-item p {
   text-align: center;
-  margin: 1rem 0;
-  width: 90%;
+  margin: 0.8rem 0;
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
+  font-family: "Shanti", sans-serif;
 
   @media (max-width: 768px) {
-      width: 95%;
+      width: 80%;
   }
 }
 
 .carousel-item h3 {
-  font-size: 2.4rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: "Shanti", sans-serif;
 
   @media (max-width: 768px) {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      font-family: "Shanti", sans-serif;
   }
 }
 
 .carousel-item p {
-  font-size: 1.8rem;
-  margin-bottom: 3rem;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  font-family: "Shanti", sans-serif;
 
   @media (max-width: 768px) {
-      font-size: 1.6rem;
-      margin-bottom: 2rem;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      font-family: "Shanti", sans-serif;
   }
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
   .carousel-item h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    font-family: "Shanti", sans-serif;
   }
 
   .carousel-item p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    font-family: "Shanti", sans-serif;
   }
 }
+
+
 `;

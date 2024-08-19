@@ -7,7 +7,7 @@ import Guilherme from "../assets/integrantes/gostoso.jpg";
 import Joao from "../assets/integrantes/mano_ge.jpg";
 
 const SobreNosWrapper = styled.div`
- background-image: ${props => props.theme.fundo};
+  background-image: ${props => props.theme.fundo};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
