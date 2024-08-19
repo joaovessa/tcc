@@ -1,21 +1,8 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
- .home-background {
-   font-size: 1.6rem;
-   background-image: ${props => props.theme.backgroundImage};
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center center;
-   background-color: ${props => props.theme.Homebackground};
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   text-align: center;
-  }
-
-/* Estilos Globais */
+/* Reset e Configurações Globais */
 * {
    margin: 0;
    padding: 0;
@@ -40,10 +27,31 @@ body {
    background-repeat: no-repeat;
    background-position: center center;
    background-color: ${props => props.theme.Homebackground};
-   display: block;
+   display: flex;
    flex-direction: column;
    justify-content: space-between;
    text-align: center;
+}
+
+/* Background da Home */
+.home-background {
+   font-size: 1.6rem;
+   background-image: ${props => props.theme.backgroundImage};
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-color: ${props => props.theme.Homebackground};
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   text-align: center;
+   min-height: 100vh;
+
+   @media (max-width: 768px) {
+      padding: 1rem;
+      background-size: cover;
+   }
 }
 
 /* Barra de Navegação */
@@ -54,11 +62,21 @@ nav {
    justify-content: space-between;
    align-items: center;
    padding: 1rem 3rem;
+   position: relative;
+
+   @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 1rem;
+   }
 }
 
 nav img {
    height: 50px;
    margin-right: 2rem;
+
+   @media (max-width: 768px) {
+      margin-bottom: 1rem;
+   }
 }
 
 nav a {
@@ -68,6 +86,11 @@ nav a {
    font-size: 2rem;
    font-weight: bold;
    margin: 0 2rem;
+
+   @media (max-width: 768px) {
+      font-size: 1.6rem;
+      margin: 0.5rem 0;
+   }
 }
 
 /* Scroll Down Button */
@@ -79,7 +102,12 @@ nav a {
   font-size: 3rem;
   cursor: pointer;
   color: white;
-  animation: bounce 2s infinite; /* Efeito de "pulsação" */
+  animation: bounce 2s infinite;
+
+  @media (max-width: 768px) {
+      font-size: 2rem;
+      bottom: 10px;
+  }
 }
 
 @keyframes bounce {
@@ -104,11 +132,20 @@ nav a {
    display: flex;
    flex-direction: column;
    justify-content: center;
+
+   @media (max-width: 768px) {
+      padding: 3rem 1rem;
+   }
 }
 
 .materials-section h2 {
    font-size: 4rem;
    margin-bottom: 3rem;
+
+   @media (max-width: 768px) {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+   }
 }
 
 .material-item {
@@ -116,6 +153,10 @@ nav a {
    flex-direction: column;
    align-items: center;
    margin-bottom: 3rem;
+
+   @media (max-width: 768px) {
+      margin-bottom: 2rem;
+   }
 }
 
 .material-item img {
@@ -123,18 +164,33 @@ nav a {
    width: 200px;
    height: auto;
    margin-bottom: 2rem;
+
+   @media (max-width: 768px) {
+      width: 150px;
+      margin-bottom: 1.5rem;
+   }
 }
 
 .material-item h3 {
    font-size: 2.5rem;
    margin-bottom: 1rem;
    font-family: "Shanti", sans-serif;
+
+   @media (max-width: 768px) {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+   }
 }
 
 .material-item p {
    font-size: 1.8rem;
    margin-bottom: 0.5rem;
    font-family: "Shanti", sans-serif;
+
+   @media (max-width: 768px) {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+   }
 }
 
 /* Conteúdo Principal */
@@ -148,6 +204,10 @@ nav a {
    align-items: center;
    padding: 2rem;
    transition: background 0.5s ease-in-out;
+
+   @media (max-width: 768px) {
+      padding: 1.5rem;
+   }
 }
 
 .main-content h1 {
@@ -157,6 +217,11 @@ nav a {
    margin: 0;
    letter-spacing: 0.2rem;
    font-family: "Spirax", sans-serif;
+
+   @media (max-width: 768px) {
+      font-size: 6rem;
+      letter-spacing: 0.1rem;
+   }
 }
 
 .main-content .subtitle {
@@ -164,6 +229,11 @@ nav a {
    margin-top: 1rem;
    font-weight: normal;
    letter-spacing: 0.15rem;
+
+   @media (max-width: 768px) {
+      font-size: 2rem;
+      margin-top: 0.5rem;
+   }
 }
 
 /* Responsividade para telas grandes */
@@ -205,6 +275,7 @@ nav a {
    }
 }
 
+/* Carousel */
 .carousel {
   position: relative;
   width: 100%;
@@ -221,13 +292,20 @@ nav a {
   flex: 0 0 auto;
   text-align: center;
   padding: 2rem 0; /* Adiciona espaçamento vertical ao conteúdo */
+
+  @media (max-width: 768px) {
+      padding: 1.5rem 0;
+  }
 }
 
 .carousel img {
   max-width: 60%;
   height: auto;
   margin: 0 auto;
-  border-radius: 10px; /* Bordas arredondadas para um efeito mais estético */
+
+  @media (max-width: 768px) {
+      max-width: 80%;
+  }
 }
 
 .prev, .next {
@@ -241,6 +319,11 @@ nav a {
   padding: 1rem;
   cursor: pointer;
   z-index: 1;
+
+  @media (max-width: 768px) {
+      font-size: 1.6rem;
+      padding: 0.8rem;
+  }
 }
 
 .prev {
@@ -251,54 +334,48 @@ nav a {
   right: 10px;
 }
 
-/* Responsividade */
-@media (min-width: 768px) {
-  .carousel img {
-    max-width: 40%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .carousel img {
-    max-width: 30%;
-  }
-}
-
-@media (min-width: 1440px) {
-  .carousel img {
-    max-width: 25%;
-  }
-}
-
+/* Carousel Content Responsividade */
 .carousel-item h3, 
 .carousel-item p {
-  text-align: center; /* Centraliza o texto para uma estética limpa */
-  margin: 1rem 0; /* Espaçamento padrão entre os elementos */
-  width: 90%; /* Define uma largura que se adapta bem a diferentes tamanhos de tela */
-  margin-left: auto; /* Centraliza horizontalmente */
-  margin-right: auto; /* Centraliza horizontalmente */
+  text-align: center;
+  margin: 1rem 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 768px) {
+      width: 95%;
+  }
 }
 
 .carousel-item h3 {
-  font-size: 2.4rem; /* Tamanho do título ajustado */
-  margin-bottom: 2rem; /* Espaçamento maior abaixo do título */
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+  }
 }
 
 .carousel-item p {
-  font-size: 1.8rem; /* Tamanho de texto legível */
-  margin-bottom: 3rem; /* Espaçamento maior abaixo do parágrafo */
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+  }
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
   .carousel-item h3 {
-    font-size: 2rem; /* Tamanho do título para dispositivos menores */
+    font-size: 2rem;
   }
 
   .carousel-item p {
-    font-size: 1.6rem; /* Tamanho do texto para dispositivos menores */
+    font-size: 1.6rem;
   }
 }
-
-
-`
+`;
