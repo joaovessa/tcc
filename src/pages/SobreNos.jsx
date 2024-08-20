@@ -100,7 +100,9 @@ export function SobreNos() {
   return (
     <>
       <nav className="sobre-nos-nav">
-        <img src={logo} alt="Logo Secure Trip" />
+      <Link to="/">
+          <img src={logo} alt="Logo Secure Trip" />
+        </Link>
         <Link to="/">Home</Link>
         <Link to="/saiba-mais">Saiba mais</Link>
         <Link to="/sobre-nos">Sobre nós</Link>

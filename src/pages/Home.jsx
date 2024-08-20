@@ -52,7 +52,10 @@ export function Home() {
   return (
     <>
       <nav>
-        <img src={logo} alt="Logo Secure Trip" />
+        {/* O logo agora está dentro de um Link que redireciona para a página Home */}
+        <Link to="/">
+          <img src={logo} alt="Logo Secure Trip" />
+        </Link>
         <Link to="/">Home</Link>
         <Link to="/saiba-mais">Saiba mais</Link>
         <Link to="/sobre-nos">Sobre nós</Link>

@@ -125,7 +125,9 @@ export function Compra() {
   return (
     <>
       <NavBar>
-        <img src={logo} alt="Logo SecureTrip" />
+      <Link to="/">
+          <img src={logo} alt="Logo Secure Trip" />
+        </Link>
         <Link to="/">Home</Link>
         <Link to="/saiba-mais">Saiba mais</Link>
         <Link to="/sobre-nos">Sobre nós</Link>

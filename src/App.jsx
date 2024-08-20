@@ -3,7 +3,9 @@ import { ThemeProvider } from "styled-components";
 
 import { Home } from "./pages/Home";
 import { SobreNos } from "./pages/SobreNos";
-import { Compra } from "./pages/Compra";  // Nova página
+import { Compra } from "./pages/Compra";
+import { Saiba } from "./pages/Saiba";
+
 
 import { theme } from "./styles/theme.js";
 import { GlobalStyle } from "./styles/global.js";
@@ -22,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: "/comprar", // Nova rota
     element: <Compra /> // Novo componente
+  },
+
+  {
+    path: "/saiba-mais", // Nova rota
+    element: <Saiba /> // Novo componente
   }
 ]);
 
