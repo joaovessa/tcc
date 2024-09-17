@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 html, body {
    height: 100%;
    width: 100%;
-   scroll-behavior: smooth; /* Scroll suave */
+   scroll-behavior: smooth;
 }
 
 body {
@@ -37,7 +37,7 @@ body {
 .home-background {
    font-size: 1.6rem;
    background-image: ${props => props.theme.backgroundImage};
-   background-size: cover;
+   background-size: cover; /* Ocupa toda a tela no desktop */
    background-repeat: no-repeat;
    background-position: center center;
    background-color: ${props => props.theme.Homebackground};
@@ -49,10 +49,12 @@ body {
    min-height: 100vh;
 
    @media (max-width: 768px) {
-      padding: 1rem;
-      background-size: cover;
+      background-size: contain; /* Ajusta o tamanho da imagem no mobile */
+      background-position: top center; /* Reposiciona a imagem para o topo no mobile */
+      padding: 0; /* Remove o padding extra */
    }
 }
+
 
 /* Barra de Navegação */
 nav {
@@ -143,10 +145,11 @@ nav a {
    margin-bottom: 3rem;
 
    @media (max-width: 768px) {
-      font-size: 3rem;
+      font-size: 2.5rem; /* Menor ainda para mobile */
       margin-bottom: 2rem;
    }
 }
+
 
 .material-item {
    display: flex;
@@ -177,7 +180,7 @@ nav a {
    font-family: "Shanti", sans-serif;
 
    @media (max-width: 768px) {
-      font-size: 2rem;
+      font-size: 1.8rem; /* Reduzido para mobile */
       margin-bottom: 0.8rem;
    }
 }
@@ -192,6 +195,20 @@ nav a {
       margin-bottom: 0.4rem;
    }
 }
+
+/* Estilo para o vídeo na página Compra */
+.compra-video {
+  border: none; /* Remove qualquer borda ao redor do vídeo */
+  max-width: 1200px; /* Largura máxima do vídeo */
+  width: 100%; /* Faz com que o vídeo ocupe toda a largura disponível */
+  height: 675px; /* Altura ajustada para manter a proporção 16:9 */
+  margin: 0 auto; /* Centraliza o vídeo */
+  
+  @media (max-width: 768px) {
+    height: 300px; /* Ajusta a altura em dispositivos menores */
+  }
+}
+
 
 /* Conteúdo Principal */
 .main-content {
@@ -263,128 +280,94 @@ nav a {
 
    nav a {
       font-size: 2.4rem;
-      margin: 0 4rem;
+      margin: 0 
+4rem; }
+
+.main-content h1 { 
+font-size: 12rem; 
+}
+
+.main-content .subtitle { 
+   font-size: 4rem; 
+} }
+
+/* Carousel */ 
+.carousel { 
+   position: relative; width: 100%; overflow: hidden; 
    }
 
-   .main-content h1 {
-      font-size: 12rem;
+.carousel-inner { 
+   display: flex; transition: transform 0.3s ease-in-out; 
    }
 
-   .main-content .subtitle {
-      font-size: 4rem;
+.carousel-item { 
+   min-width: 100%; flex: 0 0 auto; text-align: center; 
+   padding: 1rem 0;
+
+   @media (max-width: 768px) { 
+      padding: 0.5rem 0; } }
+
+.carousel img { 
+   max-width: 20%;
+   height: auto; margin: 0 auto;
+
+@media (max-width: 768px) { 
+   max-width: 30%;
+   } }
+
+.prev, .next { 
+   position: absolute; top: 50%; 
+   transform: translateY(-50%); 
+   background-color: rgba(0, 0, 0, 0.5); 
+   color: white; 
+   border: none; 
+   font-size: 1.6rem; 
+   padding: 0.8rem; 
+   cursor: pointer; 
+   z-index: 1;
+
+@media (max-width: 768px) { 
+   font-size: 1.2rem; padding: 0.6rem; } }
+
+.prev { 
+   left: 10px; 
    }
-}
-
-/* Carousel */
-.carousel {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.carousel-inner {
-  display: flex;
-  transition: transform 0.3s ease-in-out;
-}
-
-.carousel-item {
-  min-width: 100%;
-  flex: 0 0 auto;
-  text-align: center;
-  padding: 1rem 0; /* Espaçamento vertical reduzido */
-
-  @media (max-width: 768px) {
-      padding: 0.5rem 0;
-  }
-}
-
-.carousel img {
-  max-width: 20%; /* Reduz significativamente o tamanho das imagens no desktop */
-  height: auto;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-      max-width: 30%; /* Reduz ainda mais o tamanho das imagens no mobile */
-  }
-}
-
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 1.6rem;
-  padding: 0.8rem;
-  cursor: pointer;
-  z-index: 1;
-
-  @media (max-width: 768px) {
-      font-size: 1.2rem;
-      padding: 0.6rem;
-  }
-}
-
-.prev {
-  left: 10px;
-}
 
 .next {
-  right: 10px;
-}
+    right: 10px; 
+    }
 
-/* Carousel Content Responsividade */
-.carousel-item h3, 
-.carousel-item p {
-  text-align: center;
-  margin: 0.8rem 0;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: "Shanti", sans-serif;
+/* Carousel Content Responsividade */ 
+.carousel-item h3, .carousel-item p { 
+   text-align: center; 
+   margin: 0.8rem 0; 
+   width: 75%; 
+   margin-left: auto; 
+   margin-right: auto; 
+   font-family: "Shanti", sans-serif;
 
-  @media (max-width: 768px) {
-      width: 80%;
-  }
-}
+@media (max-width: 768px) { 
+   width: 80%; } }
 
-.carousel-item h3 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  font-family: "Shanti", sans-serif;
+.carousel-item h3 { 
+   font-size: 2rem; 
+   margin-bottom: 1.5rem; 
+   font-family: "Shanti", sans-serif;
 
-  @media (max-width: 768px) {
-      font-size: 1.6rem;
-      margin-bottom: 1.2rem;
-      font-family: "Shanti", sans-serif;
-  }
-}
+@media (max-width: 768px) { 
+   font-size: 1.6rem; margin-bottom: 1.2rem; } }
 
-.carousel-item p {
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
-  font-family: "Shanti", sans-serif;
-
-  @media (max-width: 768px) {
-      font-size: 1.4rem;
-      margin-bottom: 1.5rem;
-      font-family: "Shanti", sans-serif;
-  }
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .carousel-item h3 {
-    font-size: 1.6rem;
+.carousel-item p { 
+   font-size: 1.6rem;
+    margin-bottom: 2rem; 
     font-family: "Shanti", sans-serif;
-  }
 
-  .carousel-item p {
-    font-size: 1.4rem;
-    font-family: "Shanti", sans-serif;
-  }
-}
+@media (max-width: 768px) { 
+   font-size: 1.4rem; margin-bottom: 1.5rem; } }
 
+/* Responsividade */ @media (max-width: 768px) { 
+.carousel-item h3 { font-size: 1.6rem; }
+
+.carousel-item p { font-size: 1.4rem; } }
 
 `;

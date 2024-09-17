@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../assets/mala/icone.jpg';
-import malaImage from '../assets/mala/mala.jpg';
 import compraImage from '../assets/mala/compra.jpg';
 
 const PageWrapper = styled.div`
@@ -18,6 +17,7 @@ const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
@@ -30,56 +30,66 @@ const NavBar = styled.nav`
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 1rem 3rem;
+   padding: 1.5rem 4rem;
    position: relative;
 
     @media (max-width: 768px) {
       flex-direction: column;
       padding: 1rem;
+    }
+
   a {
      font-family: 'Kanit', sans-serif;
-   color: ${props => props.theme.white};
-   text-decoration: none;
-   font-size: 2rem;
-   font-weight: bold;
-   margin: 0 2rem;
+     color: ${props => props.theme.white};
+     text-decoration: none;
+     font-size: 2.2rem;
+     font-weight: bold;
+     margin: 0 3rem;
 
-   @media (max-width: 768px) {
-      font-size: 1.6rem;
-      margin: 0.5rem 0;
+     @media (max-width: 768px) {
+        font-size: 1.6rem;
+        margin: 0.5rem 0;
+      }
     }
   }
 
   img {
-    height: 50px;
+    height: 60px;
   }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Alinha o conteúdo ao topo */
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
-  margin-top: 3rem;
-  
+  margin-top: 4rem;
+  position: relative; /* Torna o posicionamento relativo */
+
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
   }
 `;
 
-const ImageWrapper = styled.div`
-  img {
-    border-radius: 20px;
-    max-width: 400px;
-    width: 100%;
+const VideoWrapper = styled.div`
+  position: relative;
+  right: -50px; /* Desloca o vídeo um pouco para a direita */
+  padding: 0;
+  margin: 0;
+
+  iframe {
+    className="compra-video"; /* Adiciona a classe */
   }
 `;
 
+
+
+
 const TextWrapper = styled.div`
   max-width: 600px;
-  margin-left: 2rem;
+  margin-left: 3rem; /* Ajuste de margem */
 
   @media (max-width: 768px) {
     margin-left: 0;
@@ -87,14 +97,14 @@ const TextWrapper = styled.div`
   }
 
   h1 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
   }
 
   p {
-    font-size: 1.5rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    font-size: 1.7rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
     font-family: "Shanti", sans-serif;
   }
 `;
@@ -105,7 +115,7 @@ const BuyButton = styled(Link)`
   text-decoration: none;
 
   img {
-    width: 200px;
+    width: 220px;
     height: auto;
   }
 
@@ -113,6 +123,8 @@ const BuyButton = styled(Link)`
     opacity: 0.8;
   }
 `;
+
+
 
 export function Compra() {
   useEffect(() => {
@@ -125,7 +137,7 @@ export function Compra() {
   return (
     <>
       <NavBar>
-      <Link to="/">
+        <Link to="/">
           <img src={logo} alt="Logo Secure Trip" />
         </Link>
         <Link to="/">Home</Link>
@@ -135,16 +147,24 @@ export function Compra() {
       </NavBar>
       <PageWrapper>
         <ContentWrapper>
-          <ImageWrapper>
-            <img src={malaImage} alt="Mala SecureTrip" />
-          </ImageWrapper>
+          <VideoWrapper>
+            <iframe 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/vYUXiUCKiy8" 
+              title="SecureTrip Video" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </VideoWrapper>
           <TextWrapper>
             <h1>SOBRE A MALA</h1>
             <p>
               A SecureTrip é um acessório de viagem moderno e prático, equipado
               com tecnologia que facilita a vida dos viajantes. Com recursos
-              como GPS integrado, carregamento sem fio, e trava de segurança
-              inteligente, proporciona conveniência e segurança. Seu design
+              como GPS integrado, carregamento sem fio, balança integrada para garantir que não ultrapasse do peso solicitado pelas companhias aéreas e trava de segurança
+              inteligente que é desbloqueada através de um cartão ou uma tag de aproximação, proporciona conveniência e segurança. Seu design
               inovador e durável torna a mala inteligente indispensável para os
               viajantes contemporâneos.
             </p>
