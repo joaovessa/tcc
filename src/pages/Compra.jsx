@@ -25,31 +25,30 @@ const PageWrapper = styled.div`
 `;
 
 const NavBar = styled.nav`
-   width: 100%;
-   background-color: ${props => props.theme.barra};
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 1.5rem 4rem;
-   position: relative;
+  width: 100%;
+  background-color: ${props => props.theme.barra};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  position: relative;
 
-    @media (max-width: 768px) {
-      flex-direction: column;
-      padding: 1rem;
-    }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
 
   a {
-     font-family: 'Kanit', sans-serif;
-     color: ${props => props.theme.white};
-     text-decoration: none;
-     font-size: 2.2rem;
-     font-weight: bold;
-     margin: 0 3rem;
+    font-family: 'Kanit', sans-serif;
+    color: ${props => props.theme.white};
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0 3rem;
 
-     @media (max-width: 768px) {
-        font-size: 1.6rem;
-        margin: 0.5rem 0;
-      }
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+      margin: 0.5rem 0;
     }
   }
 
@@ -60,12 +59,12 @@ const NavBar = styled.nav`
 
 const ContentWrapper = styled.div`
   display: flex;
-  align-items: flex-start; /* Alinha o conteúdo ao topo */
+  align-items: flex-start; 
   justify-content: space-between;
   max-width: 1400px;
   width: 100%;
   margin-top: 4rem;
-  position: relative; /* Torna o posicionamento relativo */
+  position: relative;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -75,21 +74,18 @@ const ContentWrapper = styled.div`
 
 const VideoWrapper = styled.div`
   position: relative;
-  right: -50px; /* Desloca o vídeo um pouco para a direita */
+  right: -50px; 
   padding: 0;
   margin: 0;
 
   iframe {
-    className="compra-video"; /* Adiciona a classe */
+    /* Adicione estilos aqui se necessário */
   }
 `;
 
-
-
-
 const TextWrapper = styled.div`
   max-width: 600px;
-  margin-left: 3rem; /* Ajuste de margem */
+  margin-left: 3rem; 
 
   @media (max-width: 768px) {
     margin-left: 0;
@@ -124,8 +120,6 @@ const BuyButton = styled(Link)`
   }
 `;
 
-
-
 export function Compra() {
   useEffect(() => {
     document.body.classList.add('sobre-mala-background');
@@ -153,9 +147,9 @@ export function Compra() {
               height="315" 
               src="https://www.youtube.com/embed/vYUXiUCKiy8" 
               title="SecureTrip Video" 
-              frameborder="0" 
+              frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
+              allowFullScreen>
             </iframe>
           </VideoWrapper>
           <TextWrapper>

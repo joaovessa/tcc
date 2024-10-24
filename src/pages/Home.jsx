@@ -29,19 +29,33 @@ export function Home() {
       carouselInner.style.transform = `translateX(${-index * 100}%)`;
     };
 
-    document.querySelector('.next').addEventListener('click', () => {
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+
+    const handleNext = () => {
       index++;
       showSlide(index);
-    });
+    };
 
-    document.querySelector('.prev').addEventListener('click', () => {
+    const handlePrev = () => {
       index--;
       showSlide(index);
-    });
+    };
+
+    if (nextButton) {
+      nextButton.addEventListener('click', handleNext);
+    }
+    if (prevButton) {
+      prevButton.addEventListener('click', handlePrev);
+    }
 
     return () => {
-      document.querySelector('.next').removeEventListener('click', () => {});
-      document.querySelector('.prev').removeEventListener('click', () => {});
+      if (nextButton) {
+        nextButton.removeEventListener('click', handleNext);
+      }
+      if (prevButton) {
+        prevButton.removeEventListener('click', handlePrev);
+      }
     };
   }, []);
 
@@ -52,7 +66,6 @@ export function Home() {
   return (
     <>
       <nav>
-        {/* O logo agora está dentro de um Link que redireciona para a página Home */}
         <Link to="/">
           <img src={logo} alt="Logo Secure Trip" />
         </Link>
