@@ -41,12 +41,12 @@ const NavBar = styled.nav`
     font-family: 'Kanit', sans-serif;
     color: ${props => props.theme.white};
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 2.2rem; // Aumente a fonte
     font-weight: bold;
     margin: 0 2rem;
 
     @media (max-width: 768px) {
-      font-size: 1.6rem;
+      font-size: 1.8rem; // Ajuste em telas menores
       margin: 0.5rem 0;
     }
   }
@@ -79,12 +79,12 @@ const ContentWrapper = styled.div`
 
 const VideoWrapper = styled.div`
   width: 100%; 
-  max-width: 700px; // Largura máxima
+  max-width: 250px; // Largura máxima
   margin-bottom: 2rem; 
 
   video {
     width: 100%; // Responsivo
-    height: auto; // Mantém proporção
+    height: auto; // Ajusta a altura para manter a proporção
     border-radius: 20px; // Bordas arredondadas
   }
 `;
@@ -99,13 +99,16 @@ const TextWrapper = styled.div`
   }
 
   h1 {
-    font-size: 2.5rem; // Ajuste para responsividade
+    font-size: 4.8rem; // Aumente a fonte
+    line-height: 1.2;
     margin-bottom: 2rem;
+    margin-left: 0; // Remova margem esquerda para centralizar
   }
 
   p {
-    font-size: 1.5rem; // Ajuste para responsividade
+    font-size: 1.8rem; // Aumente a fonte
     line-height: 1.6;
+    margin-left: 0; // Remova margem esquerda para centralizar
     margin-bottom: 2.5rem;
     font-family: "Shanti", sans-serif;
   }
@@ -115,9 +118,10 @@ const BuyButton = styled(Link)`
   display: inline-block;
   border-radius: 50px;
   text-decoration: none;
+  margin-left: 0; // Remova margem esquerda para centralizar
 
   img {
-    width: 220px;
+    width: 250px; // Aumente a largura do botão
     height: auto;
   }
 
