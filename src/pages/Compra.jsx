@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../assets/mala/icone.jpg';
 import compraImage from '../assets/mala/compra.jpg';
-import gpsVideo from '../assets/video/gps.mp4'; // Importe o vídeo
+import malaVideo from '../assets/video/funcionamento.mp4'; // Importe o vídeo
 
 const PageWrapper = styled.div`
   background-image: ${props => props.theme.fundo};
@@ -152,7 +152,7 @@ export function Compra() {
         <ContentWrapper>
           <VideoWrapper>
             <video controls>
-              <source src={gpsVideo} type="video/mp4" />
+              <source src={malaVideo} type="video/mp4" />
               Seu navegador não suporta o elemento de vídeo.
             </video>
           </VideoWrapper>
