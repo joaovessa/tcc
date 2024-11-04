@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../assets/mala/icone.jpg';
 import compraImage from '../assets/mala/compra.jpg';
-import malaImage from '../assets/mala/mala.jpg'; // Importe a nova imagem
+import gpsVideo from '../assets/video/gps.mp4'; // Importe o vídeo
 
 const PageWrapper = styled.div`
   background-image: ${props => props.theme.fundo};
@@ -63,45 +63,49 @@ const NavBar = styled.nav`
 
 const ContentWrapper = styled.div`
   display: flex;
-  flex-direction: column; // Para manter flexibilidade em telas pequenas
-  align-items: center;  // Centraliza verticalmente
-  justify-content: center; // Centraliza horizontalmente
+  flex-direction: column; 
+  align-items: center;  
+  justify-content: center; 
   max-width: 1400px;
   width: 100%;
   margin-top: 4rem;
-  text-align: center; // Centraliza o texto
+  text-align: center; 
 
   @media (min-width: 769px) {
-    flex-direction: row; // Muda para linha em telas maiores
+    flex-direction: row; 
+    justify-content: center;
   }
 `;
 
-const ImageWrapper = styled.div`
-  img {
+const VideoWrapper = styled.div`
+  width: 100%; 
+  max-width: 700px; // Largura máxima
+  margin-bottom: 2rem; 
+
+  video {
     width: 100%; // Responsivo
-    max-width: 500px; // Limite de largura
-    height: auto; // Mantém a proporção
-    margin-bottom: 2rem; // Espaçamento inferior
+    height: auto; // Mantém proporção
+    border-radius: 20px; // Bordas arredondadas
   }
 `;
 
 const TextWrapper = styled.div`
   max-width: 600px;
-  margin-left: 0; // Remove a margem esquerda em telas pequenas
-  padding: 0 1rem; // Adiciona espaçamento lateral
+  margin-left: 2rem; // Margem à esquerda
+  padding: 0 1rem; 
 
   @media (min-width: 769px) {
-    margin-left: 2rem; // Adiciona margem em telas maiores
+    margin-left: 4rem; // Aumente a margem em telas maiores
   }
 
   h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem; // Ajuste para responsividade
     margin-bottom: 2rem;
   }
 
   p {
-    font-size: 1.7rem;
-    line-height: 1.8;
+    font-size: 1.5rem; // Ajuste para responsividade
+    line-height: 1.6;
     margin-bottom: 2.5rem;
     font-family: "Shanti", sans-serif;
   }
@@ -143,9 +147,12 @@ export function Compra() {
       </NavBar>
       <PageWrapper>
         <ContentWrapper>
-          <ImageWrapper>
-            <img src={malaImage} alt="Mala SecureTrip" />
-          </ImageWrapper>
+          <VideoWrapper>
+            <video controls>
+              <source src={gpsVideo} type="video/mp4" />
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
+          </VideoWrapper>
           <TextWrapper>
             <h1>SOBRE A MALA</h1>
             <p>
