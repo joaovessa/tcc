@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../assets/mala/icone.jpg';
-import refsImage from '../assets/mala/refs.png';
+import gameVideo from '../assets/video/game.mp4'; // Verifique se este caminho está correto
 
 const PageWrapper = styled.div`
   background-image: ${props => props.theme.fundo};
@@ -20,7 +20,7 @@ const PageWrapper = styled.div`
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
-    min-height: calc(100vh - 80px); /* Ajusta a altura em telas menores */
+    min-height: calc(100vh - 80px);
   }
 `;
 
@@ -67,9 +67,9 @@ const ContentWrapper = styled.div`
   text-align: center;
 
   h1 {
-    font-size: 3rem;
+    font-size: 6rem;
     margin-bottom: 3rem;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Suez One', sans-serif;
 
     @media (max-width: 768px) {
       font-size: 2.4rem;
@@ -77,42 +77,25 @@ const ContentWrapper = styled.div`
     }
   }
 
-  img {
-    width: 300px;
+  video {
+    width: 100%;
+    max-width: 600px;
     height: auto;
-    margin: 2rem auto;
-    display: block;
-
-    @media (max-width: 768px) {
-      width: 200px;
-    }
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   }
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 3rem 0;
-
-    @media (max-width: 768px) {
-      margin: 2rem 0;
-    }
-  }
-
-  a {
+  p {
+    font-family: 'Kanit', sans-serif;
     font-size: 1.6rem;
+    margin-top: 2rem;
     color: white;
-    text-decoration: none;
-    font-family: "Shanti", sans-serif;
-    display: block;
-    margin-bottom: 1.5rem;
-
-    &:hover {
-      color: ${(props) => props.theme.linkHover};
-    }
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 
     @media (max-width: 768px) {
       font-size: 1.4rem;
-      margin-bottom: 1rem;
     }
   }
 `;
@@ -131,13 +114,15 @@ export function Saiba() {
       </NavBar>
       <PageWrapper>
         <ContentWrapper>
-          <h1>REFERÊNCIAS BIBLIOGRÁFICAS/ARTIGOS</h1>
-          <img src={refsImage} alt="Referências" />
-          <ul>
-            <li><a href="https://ric.cps.sp.gov.br/handle/123456789/5370" target="_blank" rel="noopener noreferrer">https://ric.cps.sp.gov.br/handle/123456789/5370</a></li>
-            <li><a href="https://repositorio.ufscar.br/handle/ufscar/15100" target="_blank" rel="noopener noreferrer">https://repositorio.ufscar.br/handle/ufscar/15100</a></li>
-            <li><a href="https://www.riu.ufam.edu.br/handle/prefix/6984" target="_blank" rel="noopener noreferrer">https://www.riu.ufam.edu.br/handle/prefix/6984</a></li>
-          </ul>
+          <h1>Nosso Jogo</h1>
+          <video controls>
+            <source src={gameVideo} type="video/mp4" />
+            Seu navegador não suporta a tag de vídeo.
+          </video>
+          <p>
+            O jogo apresenta 3 protagonistas e é uma emocionante aventura. 
+            Desbloqueie todos os portões e passe de fase para conquistar o desafio!
+          </p>
         </ContentWrapper>
       </PageWrapper>
     </>

@@ -6,6 +6,7 @@ import peças from '../assets/pecas/balanca.png';
 import amplificador_balanca from '../assets/pecas/amplificador_balança.png';
 import modulo_bluetooth from '../assets/pecas/modulo_bluetooth.png';
 import modulo_gps from '../assets/pecas/modulo_gps.png';
+import sensor_ultrassonico from '../assets/pecas/sensor-ultrassonico.png';
 import placa_arduino from '../assets/pecas/placa_arduino.png';
 
 const PageWrapper = styled.div`
@@ -309,6 +310,12 @@ export function Home() {
               <h3>Módulo GPS</h3>
               <p>Fornece localização precisa com sinal de satélite.</p>
               <p>R$35.00</p>
+            </div>
+            <div className="carousel-item">
+              <img src={sensor_ultrassonico} alt="Sensor Ultrassônico" />
+              <h3>Sensor Ultrassônico</h3>
+              <p>O HC-SR04 mede distâncias com ondas ultrassônicas, sendo usado em robótica e automação.</p>
+              <p>R$8.07</p>
             </div>
             <div className="carousel-item">
               <img src={placa_arduino} alt="Placa Arduino" />

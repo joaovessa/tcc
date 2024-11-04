@@ -151,8 +151,7 @@ export function Compra() {
             <p>
               A SecureTrip é um acessório de viagem moderno e prático, equipado
               com tecnologia que facilita a vida dos viajantes. Com recursos
-              como GPS integrado, carregamento sem fio, balança integrada para garantir que não ultrapasse do peso solicitado pelas companhias aéreas e trava de segurança
-              inteligente que é desbloqueada através de um cartão ou uma tag de aproximação, proporciona conveniência e segurança. Seu design
+              como GPS integrado, carregamento sem fio, balança integrada para garantir que não ultrapasse do peso solicitado pelas companhias aéreas e um sensor que identifica o estado da mala, sendo ele "mala fechada" ou "mala aberta". Proporciona conveniência e segurança. Seu design
               inovador e durável torna a mala inteligente indispensável para os
               viajantes contemporâneos.
             </p>
