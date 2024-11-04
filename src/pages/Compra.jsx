@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../assets/mala/icone.jpg';
 import compraImage from '../assets/mala/compra.jpg';
+import malaImage from '../assets/mala/mala.jpg'; // Importe a nova imagem
 
 const PageWrapper = styled.div`
   background-image: ${props => props.theme.fundo};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: ${(props) => props.theme.Homebackground};
   padding: 5rem 2rem;
   color: white;
   text-align: center;
@@ -17,7 +17,6 @@ const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
@@ -30,7 +29,7 @@ const NavBar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 4rem;
+  padding: 1rem 3rem;
   position: relative;
 
   @media (max-width: 768px) {
@@ -42,9 +41,9 @@ const NavBar = styled.nav`
     font-family: 'Kanit', sans-serif;
     color: ${props => props.theme.white};
     text-decoration: none;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: bold;
-    margin: 0 3rem;
+    margin: 0 2rem;
 
     @media (max-width: 768px) {
       font-size: 1.6rem;
@@ -53,43 +52,46 @@ const NavBar = styled.nav`
   }
 
   img {
-    height: 60px;
+    height: 50px;
+    margin-right: 1rem;
+
+    @media (max-width: 768px) {
+      margin-bottom: 1rem;
+    }
   }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
-  align-items: flex-start; 
-  justify-content: space-between;
+  flex-direction: column; // Para manter flexibilidade em telas pequenas
+  align-items: center;  // Centraliza verticalmente
+  justify-content: center; // Centraliza horizontalmente
   max-width: 1400px;
   width: 100%;
   margin-top: 4rem;
-  position: relative;
+  text-align: center; // Centraliza o texto
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
+  @media (min-width: 769px) {
+    flex-direction: row; // Muda para linha em telas maiores
   }
 `;
 
-const VideoWrapper = styled.div`
-  position: relative;
-  right: -50px; 
-  padding: 0;
-  margin: 0;
-
-  iframe {
-    /* Adicione estilos aqui se necessário */
+const ImageWrapper = styled.div`
+  img {
+    width: 100%; // Responsivo
+    max-width: 500px; // Limite de largura
+    height: auto; // Mantém a proporção
+    margin-bottom: 2rem; // Espaçamento inferior
   }
 `;
 
 const TextWrapper = styled.div`
   max-width: 600px;
-  margin-left: 3rem; 
+  margin-left: 0; // Remove a margem esquerda em telas pequenas
+  padding: 0 1rem; // Adiciona espaçamento lateral
 
-  @media (max-width: 768px) {
-    margin-left: 0;
-    margin-top: 2rem;
+  @media (min-width: 769px) {
+    margin-left: 2rem; // Adiciona margem em telas maiores
   }
 
   h1 {
@@ -141,17 +143,9 @@ export function Compra() {
       </NavBar>
       <PageWrapper>
         <ContentWrapper>
-          <VideoWrapper>
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/vYUXiUCKiy8" 
-              title="SecureTrip Video" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen>
-            </iframe>
-          </VideoWrapper>
+          <ImageWrapper>
+            <img src={malaImage} alt="Mala SecureTrip" />
+          </ImageWrapper>
           <TextWrapper>
             <h1>SOBRE A MALA</h1>
             <p>

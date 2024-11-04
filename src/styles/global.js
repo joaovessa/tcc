@@ -22,7 +22,6 @@ html, body {
 
 body {
    font-size: 1.6rem;
-   background-image: ${props => props.theme.fundo};
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
@@ -33,67 +32,6 @@ body {
    text-align: center;
 }
 
-/* Background da Home */
-.home-background {
-   font-size: 1.6rem;
-   background-image: ${props => props.theme.backgroundImage};
-   background-size: cover; /* Ocupa toda a tela no desktop */
-   background-repeat: no-repeat;
-   background-position: center center;
-   background-color: ${props => props.theme.Homebackground};
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   align-items: center;
-   text-align: center;
-   min-height: 100vh;
-
-   @media (max-width: 768px) {
-      background-size: contain; /* Ajusta o tamanho da imagem no mobile */
-      background-position: top center; /* Reposiciona a imagem para o topo no mobile */
-      padding: 0; /* Remove o padding extra */
-   }
-}
-
-
-/* Barra de Navegação */
-nav {
-   width: 100%;
-   background-color: ${props => props.theme.barra};
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 1rem 3rem;
-   position: relative;
-
-   @media (max-width: 768px) {
-      flex-direction: column;
-      padding: 1rem;
-   }
-}
-
-nav img {
-   height: 50px;
-   margin-right: 1rem;
-
-   @media (max-width: 768px) {
-      margin-bottom: 1rem;
-   }
-}
-
-nav a {
-   font-family: 'Kanit', sans-serif;
-   color: ${props => props.theme.white};
-   text-decoration: none;
-   font-size: 2rem;
-   font-weight: bold;
-   margin: 0 2rem;
-
-   @media (max-width: 768px) {
-      font-size: 1.6rem;
-      margin: 0.5rem 0;
-   }
-}
 
 /* Scroll Down Button */
 .scroll-down {
@@ -121,80 +59,7 @@ nav a {
   }
 }
 
-/* Materiais e Peças Section */
-.materials-section {
-   background-image: ${props => props.theme.fundo};
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center center;
-   padding: 5rem 2rem;
-   color: white;
-   text-align: center;
-   min-height: 100vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
 
-   @media (max-width: 768px) {
-      padding: 3rem 1rem;
-   }
-}
-
-.materials-section h2 {
-   font-size: 4rem;
-   margin-bottom: 3rem;
-
-   @media (max-width: 768px) {
-      font-size: 2.5rem; /* Menor ainda para mobile */
-      margin-bottom: 2rem;
-   }
-}
-
-
-.material-item {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin-bottom: 3rem;
-
-   @media (max-width: 768px) {
-      margin-bottom: 2rem;
-   }
-}
-
-.material-item img {
-   max-width: 100%;
-   width: 200px;
-   height: auto;
-   margin-bottom: 2rem;
-
-   @media (max-width: 768px) {
-      width: 150px;
-      margin-bottom: 1.5rem;
-   }
-}
-
-.material-item h3 {
-   font-size: 2.5rem;
-   margin-bottom: 1rem;
-   font-family: "Shanti", sans-serif;
-
-   @media (max-width: 768px) {
-      font-size: 1.8rem; /* Reduzido para mobile */
-      margin-bottom: 0.8rem;
-   }
-}
-
-.material-item p {
-   font-size: 1.8rem;
-   margin-bottom: 0.5rem;
-   font-family: "Shanti", sans-serif;
-
-   @media (max-width: 768px) {
-      font-size: 1.6rem;
-      margin-bottom: 0.4rem;
-   }
-}
 
 /* Estilo para o vídeo na página Compra */
 .compra-video {

@@ -8,4 +8,4 @@ export const theme = {
     backgroundImage: "url('/src/assets/mala/background.jpg')",
     fundo: "url('/src/assets/mala/fundo-desktop.jpg')"
     
-}
+} 

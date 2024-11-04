@@ -11,7 +11,6 @@ const SobreNosWrapper = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: ${(props) => props.theme.Homebackground};
   padding: 5rem 2rem;
   color: white;
   text-align: center;
@@ -33,6 +32,43 @@ const Title = styled.h1`
   @media (max-width: 768px) {
     font-size: 3rem;
     margin-bottom: 2rem;
+  }
+`;
+
+const NavBar = styled.nav`
+  width: 100%;
+   background-color: ${props => props.theme.barra};
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem 3rem;
+   position: relative;
+
+   @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 1rem;
+  }
+
+  a {
+     font-family: 'Kanit', sans-serif;
+   color: ${props => props.theme.white};
+   text-decoration: none;
+   font-size: 2rem;
+   font-weight: bold;
+   margin: 0 2rem;
+
+   @media (max-width: 768px) {
+      font-size: 1.6rem;
+      margin: 0.5rem 0;
+    }
+  }
+
+  img {
+  height: 50px;
+   margin-right: 1rem;
+
+   @media (max-width: 768px) {
+      margin-bottom: 1rem;
   }
 `;
 
@@ -89,6 +125,7 @@ const Description = styled.p`
   }
 `;
 
+
 export function SobreNos() {
   useEffect(() => {
     document.body.classList.add('sobre-nos-background');
@@ -99,15 +136,15 @@ export function SobreNos() {
 
   return (
     <>
-      <nav className="sobre-nos-nav">
-      <Link to="/">
+      <NavBar>
+        <Link to="/">
           <img src={logo} alt="Logo Secure Trip" />
         </Link>
         <Link to="/">Home</Link>
         <Link to="/saiba-mais">Saiba mais</Link>
         <Link to="/sobre-nos">Sobre nós</Link>
         <Link to="/comprar">Comprar</Link>
-      </nav>
+      </NavBar>
       <SobreNosWrapper>
         <Title>INTEGRANTES</Title>
         <TeamContainer>
