@@ -61,12 +61,10 @@ const NavBar = styled.nav`
     margin-right: 1rem;
 
     @media (max-width: 768px) {
-      height: 40px;
       margin-bottom: 1rem;
     }
   }
 `;
-
 const MaterialsSection = styled.section`
   padding: 3rem 0;
 

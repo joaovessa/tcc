@@ -30,7 +30,6 @@ const NavBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  position: relative;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -41,12 +40,12 @@ const NavBar = styled.nav`
     font-family: 'Kanit', sans-serif;
     color: ${props => props.theme.white};
     text-decoration: none;
-    font-size: 2.2rem; // Aumente a fonte
+    font-size: 2rem;
     font-weight: bold;
     margin: 0 2rem;
 
     @media (max-width: 768px) {
-      font-size: 1.8rem; // Ajuste em telas menores
+      font-size: 1.6rem;
       margin: 0.5rem 0;
     }
   }
